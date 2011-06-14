@@ -1,0 +1,39 @@
+#+TITLE: INSPIRE Devscripts
+#+AUTHOR: Tibor Simko
+#+EMAIL: tibor.simko@cern.ch
+#+DATE: <2011-06-14 Tue>
+#+DESCRIPTION: A collection of scripts useful for INSPIRE development.
+#+KEYWORDS: invenio, inspire, development, scripts
+#+LANGUAGE: en
+
+* About inspire-devscripts
+
+=inspire-devscripts= repository contains a collection of scripts
+useful when hacking on the INSPIRE instance of [[http://invenio-software.org/][Invenio]].  Since INSPIRE
+source code repository is a sort of overlay on top of Invenio source
+code repository, see also accompanying =invenio-devscripts=.
+
+* Contents
+
+* Installation
+
+* Usage
+
+* License
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, see [[http://www.gnu.org/licenses/]].
+
+* See also
+
+- [[http://invenio-software.org/][Invenio]]
