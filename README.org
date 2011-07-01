@@ -1,7 +1,7 @@
 #+TITLE: INSPIRE Devscripts
 #+AUTHOR: Tibor Simko
 #+EMAIL: tibor.simko@cern.ch
-#+DATE: <2011-06-14 Tue>
+#+DATE: <2011-07-01 Fri>
 #+DESCRIPTION: A collection of scripts useful for INSPIRE development.
 #+KEYWORDS: invenio, inspire, development, scripts
 #+LANGUAGE: en
@@ -15,9 +15,33 @@ code repository, see also accompanying =invenio-devscripts=.
 
 * Contents
 
+- inspire-recreate-demo-site :: recreate INSPIRE demo site
+
 * Installation
 
+See =invenio-devscripts= repository instructions; the same applies
+here.  In addition to the configuration environment variables
+mentioned there, you may also want to tweak:
+
+| Variable           | Documentation              | Default value         |
+| CFG_INSPIRE_SRCDIR | where are INSPIRE sources? | ~/private/src/inspire |
+
 * Usage
+
+** inspire-recreate-demo-site
+
+Having a running Invenio installation, run this command to erase given
+Invenio instance and reinstall new fresh INSPIRE demo site.  For
+example, on a personal SLC5 box used for development, you can run this
+command with the following ultra dangerous options:
+
+#+BEGIN_SRC sh
+CFG_INVENIO_SRCDIR=/opt/simko/src/invenio \
+CFG_INSPIRE_SRCDIR=/opt/simko/src/inspire \
+CFG_INVENIO_HOSTNAME=pcuds123456 \
+CFG_INVENIO_USER=apache \
+inspire-recreate-demo-site --yes-i-know
+#+END_SRC
 
 * License
 
@@ -37,3 +61,4 @@ along with this program; if not, see [[http://www.gnu.org/licenses/]].
 * See also
 
 - [[http://invenio-software.org/][Invenio]]
+- [[https://github.com/tiborsimko/invenio-devscripts][invenio-devscripts]]
