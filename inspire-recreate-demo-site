@@ -7,7 +7,7 @@
 #
 # Tibor Simko <tibor.simko@cern.ch>
 #
-# Copyright (C) 2011, 2012 CERN.
+# Copyright (C) 2011, 2012, 2013 CERN.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 # config section:
 CFG_INVENIO_SRCDIR=${CFG_INVENIO_SRCDIR:=~/private/src/invenio}
 CFG_INSPIRE_SRCDIR=${CFG_INSPIRE_SRCDIR:=~/private/src/inspire}
+CFG_INSPIRE_BIBTASK_USER=${CFG_INSPIRE_BIBTASK_USER:=admin}
 CFG_INVENIO_PREFIX=${CFG_INVENIO_PREFIX:=/opt/invenio}
 CFG_INVENIO_HOSTNAME=${CFG_INVENIO_HOSTNAME:=pcuds07}
 CFG_INVENIO_DOMAINNAME=${CFG_INVENIO_DOMAINNAME:=cern.ch}
@@ -72,7 +73,7 @@ make -s
 sudo -u $CFG_INVENIO_USER make -s install
 
 # install INSPIRE DB changes:
-sudo -u $CFG_INVENIO_USER make -s install-dbchanges
+sudo -u $CFG_INVENIO_USER CFG_INSPIRE_BIBTASK_USER=$CFG_INSPIRE_BIBTASK_USER make -s install-dbchanges
 
 # create INSPIRE-specific invenio-local.conf:
 sudo -u $CFG_INVENIO_USER sh -c "sed -n '/END-customize-me/,\$p' $CFG_INVENIO_PREFIX/etc/invenio-local.conf-example >> $CFG_INVENIO_PREFIX/etc/invenio-local.conf"

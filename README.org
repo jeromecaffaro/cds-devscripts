@@ -23,8 +23,9 @@ See =invenio-devscripts= repository instructions; the same applies
 here.  In addition to the configuration environment variables
 mentioned there, you may also want to tweak:
 
-| Variable           | Documentation              | Default value         |
-| CFG_INSPIRE_SRCDIR | where are INSPIRE sources? | ~/private/src/inspire |
+| Variable                 | Documentation                    | Default value         |
+| CFG_INSPIRE_SRCDIR       | where are INSPIRE sources?       | ~/private/src/inspire |
+| CFG_INSPIRE_BIBTASK_USER | submit initial bibtasks as whom? | admin                 |
 
 * Usage
 
