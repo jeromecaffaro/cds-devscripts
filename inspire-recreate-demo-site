@@ -62,10 +62,9 @@ cd $CFG_INVENIO_SRCDIR
 make -s && sudo -u $CFG_INVENIO_USER make -s install
 
 # install Atlantis demo site without records:
-sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --update-all \
-    --drop-demo-site \
-    --create-demo-site \
-    --yes-i-know
+sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --update-all
+sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --drop-demo-site --yes-i-know
+sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --create-demo-site --yes-i-know
 
 # install INSPIRE sources:
 cd $CFG_INSPIRE_SRCDIR
@@ -77,7 +76,8 @@ sudo -u $CFG_INVENIO_USER CFG_INSPIRE_BIBTASK_USER=$CFG_INSPIRE_BIBTASK_USER mak
 
 # create INSPIRE-specific invenio-local.conf:
 sudo -u $CFG_INVENIO_USER sh -c "sed -n '/END-customize-me/,\$p' $CFG_INVENIO_PREFIX/etc/invenio-local.conf-example >> $CFG_INVENIO_PREFIX/etc/invenio-local.conf"
-sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --update-all --reset-all
+sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --update-all --yes-i-know
+sudo -u $CFG_INVENIO_USER $CFG_INVENIO_PREFIX/bin/inveniocfg --reset-all --yes-i-know
 
 # load INSPIRE demo site:
 echo "TRUNCATE schTASK" | $CFG_INVENIO_PREFIX/bin/dbexec
