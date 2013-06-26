@@ -1,21 +1,19 @@
-#+TITLE: INSPIRE Devscripts
-#+AUTHOR: Tibor Simko
-#+EMAIL: tibor.simko@cern.ch
-#+DATE: <2012-12-06 Thu>
-#+DESCRIPTION: A collection of scripts useful for INSPIRE development.
-#+KEYWORDS: invenio, inspire, development, scripts
+#+TITLE:     CDS Devscript
+#+DATE:      2013-06-17 lun
+#+DESCRIPTION: A collection of scripts useful for CDS development.
+#+KEYWORDS: invenio, cds, development, scripts
 #+LANGUAGE: en
 
-* About inspire-devscripts
+* About cds-devscripts
 
-=inspire-devscripts= repository contains a collection of scripts
-useful when hacking on the INSPIRE instance of [[http://invenio-software.org/][Invenio]].  Since INSPIRE
+=cds-devscripts= repository contains a collection of scripts
+useful when hacking on the CDS instance of [[http://invenio-software.org/][Invenio]].  Since CDS
 source code repository is a sort of overlay on top of Invenio source
 code repository, see also accompanying =invenio-devscripts=.
 
 * Contents
 
-- inspire-recreate-demo-site :: recreate INSPIRE demo site
+- cds-recreate-demo-site :: recreate CDS demo site
 
 * Installation
 
@@ -24,28 +22,28 @@ here.  In addition to the configuration environment variables
 mentioned there, you may also want to tweak:
 
 | Variable                 | Documentation                    | Default value         |
-| CFG_INSPIRE_SRCDIR       | where are INSPIRE sources?       | ~/private/src/inspire |
-| CFG_INSPIRE_BIBTASK_USER | submit initial bibtasks as whom? | admin                 |
+| CFG_CDS_SRCDIR       | where are CDS sources?       | ~/private/src/invenio-cern     |
+| CFG_CDS_BIBTASK_USER | submit initial bibtasks as whom? | admin                 |
 
 * Usage
 
-** inspire-recreate-demo-site
+** cds-recreate-demo-site
 
 Having a running Invenio installation, run this command to erase given
-Invenio instance and reinstall new fresh INSPIRE demo site.
+Invenio instance and reinstall new fresh CDS demo site.
 
 For example, here are commands to run in order to set up a completely
-new virtualenv environment called =inspire-maint-1.1= that will run
-INSPIRE demo site on top of Invenio =maint-1.1= branch:
+new virtualenv environment called =cds-master= that will run
+CDS demo site on top of Invenio =master= branch:
 
 #+BEGIN_SRC sh
 cd ~/private/src/invenio
-git checkout maint-1.1
-mkvirtualenv --system-site-packages inspire-maint-1.1
-invenio-initialise-virtualenv inspire-maint-1.1 --yes-i-know
-deactivate && workon inspire-maint-1.1
+git checkout master
+mkvirtualenv --system-site-packages cds-master
+invenio-initialise-virtualenv cds-master --yes-i-know
+deactivate && workon cds-master
 invenio-recreate-demo-site --yes-i-know
-inspire-recreate-demo-site --yes-i-know
+cds-recreate-demo-site --yes-i-know
 #+END_SRC
 
 * License
